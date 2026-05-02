@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>桃海 - 网易我的世界服务器</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;font-family:微软雅黑}
+        body{background:#121826;color:#eef1f8;padding:20px}
+        .box{max-width:850px;margin:0 auto;background:#1e293b;border-radius:14px;padding:30px;box-shadow:0 0 30px #0f2744}
+        h1{text-align:center;color:#38bdf8;margin-bottom:25px;letter-spacing:2px}
+        .nav{display:flex;gap:10px;justify-content:center;margin-bottom:30px;flex-wrap:wrap}
+        .nav a{
+            padding:12px 24px;
+            background:#273444;
+            color:#fff;
+            text-decoration:none;
+            border-radius:8px;
+            font-weight:bold;
+            transition:0.2s
+        }
+        .nav a:hover{background:#38bdf8;color:#000}
+        .nav a.active{background:#38bdf8;color:#000}
+        .content{display:none}
+        .content.show{display:block}
+        .card{background:#273444;padding:22px;border-radius:10px;margin-bottom:20px}
+        h3{color:#facc15;margin-bottom:12px;border-left:4px solid #38bdf8;padding-left:10px}
+        p{line-height:1.8;margin:6px 0}
+        .online{background:#16a34a;padding:5px 12px;border-radius:4px}
+        .footer{text-align:center;margin-top:40px;color:#94a3b8;font-size:14px}
+        .news-box{background:#333355;padding:20px;border-radius:8px}
+        .news-title{color:#38bdf8;font-size:18px;font-weight:bold}
+        .news-time{color:#94a3b8;margin:8px 0}
+    </style>
+</head>
+<body>
+<div class="box">
+    <h1>🌐 桃海 网易我的世界服务器</h1>
+
+    <div class="nav">
+        <a class="active" onclick="changePage('home',this)">服务器首页</a>
+        <a onclick="changePage('notice',this)">管理运营通知</a>
+        <a onclick="changePage('metro',this)">桃海地铁</a>
+        <a onclick="changePage('road',this)">桃海高速</a>
+        <a onclick="changePage('build',this)">桃海承建</a>
+    </div>
+
+    <div id="home" class="content show">
+        <div class="card">
+            <h3>服务器简介</h3>
+            <p>服务器名称：桃海</p>
+            <p>游玩平台：<span style="color:#ff7800;font-weight:bold">网易我的世界</span></p>
+            <p>服务器状态：<span class="online">全新新开服务器</span></p>
+            <p>服务器主打：城市交通、地铁、高速、大型基建建造</p>
+            <p>新服刚刚开放，设施持续规划建设中，欢迎各位建造爱好者加入</p>
+        </div>
+    </div>
+
+    <div id="notice" class="content">
+        <div class="card">
+            <h3>服务器管理运营通知</h3>
+            <p>1. 本服为全新开荒服务器，所有设施从零开始建造</p>
+            <p>2. 目前处于初期建设阶段，后续逐步完善各项交通工程</p>
+            <p>3. 入服请遵守基础规则，共同维护良好建造环境</p>
+            <p>4. 后续建设规划、线路开通都会在此发布通知</p>
+            <p>5. 欢迎积极参与服务器各类基建项目建设</p>
+        </div>
+    </div>
+
+    <div id="metro" class="content">
+        <div class="card">
+            <h3>桃海地铁工程</h3>
+            <div class="news-box">
+                <div class="news-title">桃海地铁S1号线 在建公告</div>
+                <div class="news-time">发布日期：2026.05.02</div>
+                <p>桃海地铁首条线路S1号线现已正式开工建设。</p>
+                <p>现阶段轨道铺设、站台主体结构全部施工完成，线路走向贯穿城区主要地带。</p>
+                <p>全线按照标准化轨道交通规格建造，后续将会陆续开通站点，完善全线交通网络。</p>
+                <p>工程进度持续公示，敬请各位玩家关注。</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="road" class="content">
+        <div class="card">
+            <h3>桃海高速路网</h3>
+            <p>1. 规划环城高速与城际快速公路网络</p>
+            <p>2. 包含互通立交、收费站、道路服务区全套设施</p>
+            <p>3. 承担城市远距离交通通行，完善陆路交通体系</p>
+            <p>4. 现阶段整体规划完成，逐步动工修建</p>
+            <p>5. 打造完整现代化公路交通系统</p>
+        </div>
+    </div>
+
+    <div id="build" class="content">
+        <div class="card">
+            <h3>桃海承建工程</h3>
+            <p>1. 专门负责服务器所有公共大型建筑施工</p>
+            <p>2. 统一规划城市区域、交通干线、公共设施</p>
+            <p>3. 可申请加入建造团队，参与官方工程项目</p>
+            <p>4. 严格统一建筑风格，打造整齐美观城市</p>
+            <p>5. 新服开荒阶段，大量建造项目等待开发</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        ©️青灯鸭
+    </div>
+</div>
+
+<script>
+function changePage(id,btn){
+    let allContent = document.querySelectorAll(".content");
+    allContent.forEach(item=>{
+        item.classList.remove("show");
+    })
+    document.getElementById(id).classList.add("show");
+    let allBtn = document.querySelectorAll(".nav a");
+    allBtn.forEach(item=>{
+        item.classList.remove("active");
+    })
+    btn.classList.add("active");
+}
+</script>
+
+</body>
+</html>
